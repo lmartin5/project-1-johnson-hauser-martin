@@ -16,7 +16,7 @@ Where:
 
 import os
 os.system('sage --preparse permutation.sage')
-os.system('mv caesar.sage.py permutation.py')
+os.system('mv permutation.sage.py permutation.py')
 import permutation as perm 
 
 def init(args):
@@ -34,10 +34,10 @@ def process(args):
     for ch in data:
         if (ch.isalpha()):
             if (mode == 'enc'):
-                #ch = ciph.encrypt(ch,key)
-                ch = ciph.encrypt(ch,key)
+                #ch = perm.encrypt(ch,key)
+                ch = perm.encrypt(ch,key)
             if (mode == 'dec'):
-                ch = ciph.decrypt(ch,key)
+                ch = perm.decrypt(ch,key)
         fout.write(ch)
 
     fin.close()
@@ -45,7 +45,7 @@ def process(args):
 
 def write_key(file_name):
     key_file = open(file_name,'w') 
-    key = ciph.key_gen()
+    key = perm.key_gen()
     key_file.write(str(key))
     key_file.close()
 
