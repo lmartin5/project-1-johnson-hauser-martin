@@ -1,6 +1,16 @@
-import random
+'''
+Assignment Name: Project 1
+Name 1: Hunter Hauser
+Name 2: Everett Johnson
+Name 3: Luke Martin
+GitHub Name: lmartin5
+'''
+
 def key_gen():
-    return random.randint(1,25)    
+    alph = [chr(x) for x in range(ord('A'), ord('Z') + 1)]
+    key = Permutations(alph).random_element()
+    key = ''.join(key)
+    return key  
 
 def encrypt(ch,key):
     pos = ord(ch) - ord('A')

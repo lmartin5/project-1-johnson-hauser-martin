@@ -1,4 +1,10 @@
 '''
+Assignment Name: Project 1
+Name 1: Hunter Hauser
+Name 2: Everett Johnson
+Name 3: Luke Martin
+GitHub Name: lmartin5
+
 Usage A: sage control.sage key_file
 Where:
  mode is enc or dec
