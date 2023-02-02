@@ -21,9 +21,9 @@ Where:
 '''
 
 import os
-os.system('sage --preparse permutation.sage')
-os.system('mv permutation.sage.py permutation.py')
-import permutation as perm 
+os.system('sage --preparse project1.sage')
+os.system('mv project1.sage.py project1.py')
+import project1 as proj1 
 
 def init(args):
     mode = args[1]
@@ -40,10 +40,10 @@ def process(args):
     for ch in data:
         if (ch.isalpha()):
             if (mode == 'enc'):
-                #ch = perm.encrypt(ch,key)
-                ch = perm.encrypt(ch,key)
+                #ch = proj1.encrypt(ch,key)
+                ch = proj1.encrypt(ch,key)
             if (mode == 'dec'):
-                ch = perm.decrypt(ch,key)
+                ch = proj1.decrypt(ch,key)
         fout.write(ch)
 
     fin.close()
@@ -51,7 +51,7 @@ def process(args):
 
 def write_key(file_name):
     key_file = open(file_name,'w') 
-    key = perm.key_gen()
+    key = proj1.key_gen()
     key_file.write(str(key))
     key_file.close()
 
