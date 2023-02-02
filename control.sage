@@ -34,7 +34,7 @@ def init(args):
 
 def process(args):
     mode, key_file, fin, fout = init(args)
-    key = int(key_file.read())
+    key = key_file.read()
 
     data = fin.read().upper()
     for ch in data:
