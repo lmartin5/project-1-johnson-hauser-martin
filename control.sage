@@ -5,6 +5,10 @@ Name 2: Everett Johnson
 Name 3: Luke Martin
 GitHub Name: lmartin5
 
+File name: control.sage
+File desc: This file contains the functions used for the 
+           using the permutation cipher, contained within project1.sage.
+
 Usage A: sage control.sage key_file
 Where:
  mode is enc or dec
