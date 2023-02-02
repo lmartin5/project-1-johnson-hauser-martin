@@ -13,12 +13,13 @@ def key_gen():
     return key  
 
 def encrypt(ch,key):
-    pos = ord(ch) - ord('A')
-    return chr(((ord(key[pos]) + ord(ch)) % 26) + ord('A'))
+    return key[ord(ch) - ord('A')]
 
 def decrypt(ch,key):
     dict = {}
-    for i in range(65, 91, 1):
-        dict[i] = key[i - 65]
+    for i in range(ord('A'), ord('Z') + 1):
+        dict[encrypt(chr(i), key)] = chr(i)
+    return dict[ch]
+
         
 
