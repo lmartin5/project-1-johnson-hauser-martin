@@ -35,10 +35,7 @@ def decrypt(ch,key):
     Builds a dictionary that acts as the inverse function to encrypt.
     Params: 
         ch: the character to be decrypted
-        key: string of 26 capital letters permuted randomly
+        key: dict of char-char key-value pairs, values are decrypted characters
     Returns: decrypted character
     """
-    dict = {}
-    for i in range(ord('A'), ord('Z') + 1):
-        dict[encrypt(chr(i), key)] = chr(i)
-    return dict[ch]
+    return key[ch]

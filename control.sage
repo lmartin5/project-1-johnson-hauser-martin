@@ -39,16 +39,22 @@ def init(args):
 def process(args):
     mode, key_file, fin, fout = init(args)
     key = key_file.read()
-
     data = fin.read().upper()
-    for ch in data:
-        if (ch.isalpha()):
-            if (mode == 'enc'):
-                #ch = proj1.encrypt(ch,key)
-                ch = proj1.encrypt(ch,key)
-            if (mode == 'dec'):
-                ch = proj1.decrypt(ch,key)
-        fout.write(ch)
+
+    if (mode == 'enc'):
+        for ch in data:
+            if (ch.isalpha()):
+                ch = proj1.encrypt(ch, key)
+            fout.write(ch)
+    
+    elif (mode == 'dec'):
+        decrypt_dict = {}
+        for i in range(ord('A'), ord('Z') + 1):
+            decrypt_dict[proj1.encrypt(chr(i), key)] = chr(i)
+        for ch in data:
+            if (ch.isalpha()):
+                ch = proj1.decrypt(ch, decrypt_dict)
+            fout.write(ch)
 
     fin.close()
     fout.close()
