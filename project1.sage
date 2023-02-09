@@ -32,7 +32,8 @@ def encrypt(ch,key):
 
 def decrypt(ch,key):
     """Decrypts a character using a key for the permutation cipher.
-    Builds a dictionary that acts as the inverse function to encrypt.
+    Key is a dictionary that acts as the inverse function to encrypt
+    that is built in control.sage.
     Params: 
         ch: the character to be decrypted
         key: dict of char-char key-value pairs, values are decrypted characters
